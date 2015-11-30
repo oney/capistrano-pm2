@@ -81,7 +81,7 @@ namespace :pm2 do
 
   def run_task(*args)
     on roles fetch(:pm2_roles) do
-      within fetch(:pm2_target_path, release_path) do
+      within fetch(:pm2_target_path, current_path) do
         with fetch(:pm2_env_variables) do
           execute *args
         end
